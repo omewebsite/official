@@ -1,0 +1,19 @@
+/* Main Page Global Styles */
+body {
+  font-family: 'Sarabun', sans-serif;
+}
+
+.lang-btn {
+  width: 3rem;
+}
+
+.mainpage {
+  font-weight: bold;
+}
+
+@media(max-width:768px) {
+  .mainpage {
+    font-size: 22px;
+    padding-bottom: 15px;
+  }
+}

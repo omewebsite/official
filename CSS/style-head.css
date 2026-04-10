@@ -1,0 +1,50 @@
+.dropdown-toggle.btn-yellow {
+  background-color: #ffcf6f;
+  color: #000000;
+}
+
+.dropdown-menu {
+  margin-top: 8px;
+}
+
+.logo {
+  max-width: 100px; /* Adjust the maximum width of the logo */
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.header-text {
+  padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+      max-width: 100px; /* Adjust the maximum width of the logo for smaller screens */
+  }
+
+  .header-text h2 {
+      font-size: 20px; /* Adjust font size for smaller screens */
+      font-weight: bold;
+  }
+
+  .header-text h4 {
+      font-size: 16px; /* Adjust font size for smaller screens */
+  }
+  .dropdown-toggle.btn-yellow {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+  .btn.btn-light {
+      font-size: 12px; /* Adjust font size for smaller screens */
+  }
+    
+}
+
+
+
+.head-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}

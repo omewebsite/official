@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">สำนักการศึกษาทหาร</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun&display=swap">
+    <link rel="stylesheet" href="./CSS/style-head.css">
+    <link rel="stylesheet" href="./CSS/style-card-name.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        body { font-family: 'Sarabun', sans-serif; background-color: #f8f9fa; }
+        .mainpage { text-align: center; margin-top: 50px; margin-bottom: 50px; font-weight: bold; }
+        .lang-btn { width: 3rem; }
+        .ceo-container { min-height: 500px; }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    
+    <div class="container pt-3 text-end">
+        <div class="btn-group btn-group-sm">
+            <button id="lang-th" class="btn btn-outline-primary lang-btn">TH</button>
+            <button id="lang-en" class="btn btn-outline-primary lang-btn">EN</button>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h1 class="mainpage" id="page-title">ผู้บังคับบัญชา สศท.สปท.</h1>
+
+        <div id="md-content" class="ceo-container">
+            <div class="text-center">กำลังโหลดข้อมูล...</div>
+        </div>
+    </div>
+
+    <hr class="mx-auto" style="width:60%; margin-top: 50px;">
+    <div id="footer"></div>
+
+    <script>
+        async function loadMarkdownContent(lang) {
+            const contentDiv = document.getElementById('md-content');
+            const pageTitle = document.getElementById('page-title');
+            const fileName = `./ข้อมูลองค์กร/content-ceo-${lang}.md`;
+
+            try {
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error('ไม่สามารถโหลดไฟล์เนื้อหาได้');
+                const text = await response.text();
+                
+                // Parse structured Markdown manually since we want a specific card layout
+                // We split by horizontal rule (---)
+                const blocks = text.split(/\n---\n/);
+                
+                const ceos = blocks.map(block => {
+                    const lines = block.trim().split('\n');
+                    const name = lines.find(l => l.startsWith('#'))?.replace('#', '').trim() || '';
+                    const img = lines.find(l => l.startsWith('IMG:'))?.replace('IMG:', '').trim() || '';
+                    const roleLines = lines.filter(l => !l.startsWith('#') && !l.startsWith('IMG:') && l.trim() !== '');
+                    const role = roleLines.join('<br>');
+                    return { name, img, role };
+                });
+
+                let html = '';
+                
+                if (ceos.length > 0) {
+                    // Director (First block)
+                    const dir = ceos[0];
+                    html += `
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-md-4">
+                                <div class="org-card">
+                                    <div class="photo-frame">
+                                        <img src="${dir.img}" alt="${dir.name}">
+                                    </div>
+                                    <div class="name-band">
+                                        <h4>${dir.name}</h4>
+                                    </div>
+                                    <div class="role-band">
+                                        <p>${dir.role}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                if (ceos.length > 1) {
+                    // Deputies (Following blocks)
+                    html += '<div class="row justify-content-center g-5">';
+                    for (let i = 1; i < ceos.length; i++) {
+                        const dep = ceos[i];
+                        html += `
+                            <div class="col-md-4">
+                                <div class="org-card">
+                                    <div class="photo-frame">
+                                        <img src="${dep.img}" alt="${dep.name}">
+                                    </div>
+                                    <div class="name-band">
+                                        <h5>${dep.name}</h5>
+                                    </div>
+                                    <div class="role-band">
+                                        <p>${dep.role}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    html += '</div>';
+                }
+
+                contentDiv.innerHTML = html;
+                updateUI(lang);
+            } catch (error) {
+                console.error(error);
+                contentDiv.innerHTML = `<div class="alert alert-danger">เกิดข้อผิดพลาด: ${error.message}</div>`;
+            }
+        }
+
+        function updateUI(lang) {
+            localStorage.setItem('lang', lang);
+            const isThai = lang === 'th';
+            document.title = isThai ? 'สำนักการศึกษาทหาร' : 'Office of Military Education';
+            document.getElementById('page-title').textContent = isThai ? 'ผู้บังคับบัญชา สศท.สปท.' : 'Command Team – OME';
+            document.getElementById('lang-th').classList.toggle('active', isThai);
+            document.getElementById('lang-en').classList.toggle('active', !isThai);
+        }
+
+        document.getElementById('lang-th').addEventListener('click', () => loadMarkdownContent('th'));
+        document.getElementById('lang-en').addEventListener('click', () => loadMarkdownContent('en'));
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const pref = localStorage.getItem('lang') || 'th';
+            loadMarkdownContent(pref);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./JS/script-load-head-foot.js"></script>
+</body>
+</html>

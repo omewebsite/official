@@ -1,0 +1,47 @@
+.image-shelf {
+  width: 100%; /* Full screen width */
+  height: 100%; /* Fixed height of 200px */
+  display: flex; /* Arrange images horizontally */
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Center images vertically */
+  background-color: #f6ebd5;
+}
+
+.image-shelf img {
+  max-width: 95%;
+  padding: 20px 35px; /* Padding for each image */
+  height: 100%;
+} 
+
+.image-shelf a:last-child img {
+  margin-left: 35px; /* Adjust margin to move the last image away from the second image */
+}
+
+.image-shelf a:nth-child(2) img {
+  max-width: 100%;
+}
+
+
+@media (max-width: 768px) {
+
+  .image-shelf {
+    width: 100%; /* Full screen width */
+    height: auto; /* Allow the height to adjust based on content */
+    display: flex; /* Arrange images horizontally */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    background-color: #f6ebd5;
+    overflow-x: auto; /* Enable horizontal scrolling on smaller screens if necessary */
+}
+
+.image-shelf a img {
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+    height: auto; /* Allow the height to adjust proportionally */
+    padding: 10px 10px; /* Add some horizontal spacing between images */
+}
+
+.image-shelf a:last-child img {
+  margin-left: 10px; /* Adjust margin to move the last image away from the second image */
+}
+
+}

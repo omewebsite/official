@@ -1,0 +1,36 @@
+/* Default styles for box layout */
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-item {
+  flex: 0 0 calc(20% - 20px); /* Adjust the width of each box item here */
+  margin: 10px;
+  text-align: center;
+}
+
+.box-item img {
+  width: 100%;
+  height: auto;
+}
+
+.box-item h2 {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+/* Media query for mobile screens */
+@media only screen and (max-width: 768px) {
+  .box {
+      flex-direction: column; /* Stack boxes vertically on mobile */
+  }
+
+  .box-item {
+      flex: 0 0 calc(100% - 20px); /* Take full width of container */
+  }
+  .box-item img {
+    width: 70%;
+    height: auto;
+  }
+}

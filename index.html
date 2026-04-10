@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="pageTitle">สำนักการศึกษาทหาร</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun&display=swap">
+  <link rel="stylesheet" href="./CSS/style-newcard.css">
+  <link rel="stylesheet" href="./CSS/style-map.css">
+  <link rel="stylesheet" href="./CSS/style-head.css">
+  <link rel="stylesheet" href="./CSS/style-bookshelf.css">
+  <link rel="stylesheet" href="./CSS/style-box-lesson.css">
+  <link rel="stylesheet" href="./CSS/style-annouce.css">
+  <link rel="stylesheet" href="./CSS/style-chatbot.css">
+  <link rel="stylesheet" href="./CSS/style-main.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9J1VKLH5L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date()); gtag('config', 'G-Q9J1VKLH5L');
+  </script>
+
+  <img src="./IMG/img-head.jpg" alt="Header Image" class="head-image">
+
+  <div id="header"></div>
+
+
+  <div class="image-shelf">
+    <a href="https://ebook.lib.ku.ac.th/king-rama9/"><img src="./IMG/king-book-shelf.png" alt="King Rama IX"></a>
+    <a href="recommend_book.html"><img src="./IMG/commander-shelf.png" alt="Commander Shelf"></a>
+    <a href="https://thaiome.rtarf.mi.th/elib/index.html"><img src="./IMG/ndsi-lib-shelf.png" alt="NDSI Library"></a>
+  </div>
+
+  <div class="container pt-3 text-end">
+    <div class="btn-group btn-group-sm">
+      <button id="lang-th" class="btn btn-outline-primary lang-btn">TH</button>
+      <button id="lang-en" class="btn btn-outline-primary lang-btn">EN</button>
+    </div>
+  </div>
+
+  <main class="container mt-4">
+
+    <h2 class="mainpage" data-i18n="coursesHead">หลักสูตรที่รับผิดชอบ</h2>
+    <div class="box">
+
+      <div class="box-item">
+        <img src="./IMG/JOC-box.jpg" alt="JOC">
+        <a href="https://drive.google.com/file/d/1EFkN1qiWWbuhVAuXjCM9eDDI2UkE8Y-S/view">
+          <p data-i18n="course1">หลักสูตรการปฏิบัติการร่วม</p>
+        </a>
+      </div>
+
+      <div class="box-item">
+        <img src="./IMG/COC-box.jpg" alt="COC">
+        <a href="https://drive.google.com/file/d/1Ra1ody9gj7Y42y8L3ZMkDMGpmoeOGKCf/view">
+          <p data-i18n="course2">หลักสูตรนายทหาร<br>สัญญาบัตรใหม่ของ บก.ทท.</p>
+        </a>
+      </div>
+
+      <div class="box-item">
+        <img src="./IMG/NCOC-box.jpg" alt="NCOC">
+        <a href="https://drive.google.com/file/d/1Wjnvlp5aTzcijVkWVBbp3ZwxPb6CMAVo/view">
+          <p data-i18n="course3">หลักสูตรนายทหาร<br>ประทวนใหม่ของ บก.ทท.</p>
+        </a>
+      </div>
+
+      <div class="box-item">
+        <img src="./IMG/ESCC-box.jpg" alt="ESC1">
+        <a href="https://drive.google.com/file/d/1gnzcrxu-UKAidrmJwvUGL7oD8PpqwfI8/view">
+          <p data-i18n="course4">หลักสูตรนายทหารสัญญาบัตรสายวิทยาการด้านการศึกษา</p>
+        </a>
+      </div>
+
+      <div class="box-item">
+        <img src="./IMG/ESCN-box.jpg" alt="ESC2">
+        <a href="https://drive.google.com/file/d/1t3dmQd7TSZvmQd_ioWL4lxR2gADAbzA7/view">
+          <p data-i18n="course5">หลักสูตรนายทหารประทวนสายวิทยาการด้านการศึกษา</p>
+        </a>
+      </div>
+
+    </div>
+    <br>
+
+    <div class="announcement">
+      <h2 class="mainpage" data-i18n="newsHead">ข่าวประชาสัมพันธ์</h2>
+      <ul>
+        <!-- Content loaded dynamically from announcements.json -->
+      </ul>
+    </div>
+    <br><br>
+
+    <section id="photo-news">
+      <h2 class="mainpage" data-i18n="photoHead">กิจกรรม สศท.สปท.</h2>
+      <div class="row" id="card-container"></div>
+    </section>
+    <br><br>
+
+    <div class="announcement">
+      <h2 class="mainpage" data-i18n="contactHead">ติดต่อ สศท.สปท.</h2>
+      <p data-i18n="addressText">
+        ที่อยู่ : เลขที่ ๖๒ ชั้น ๓ อาคารอเนกประสงค์ สถาบันวิชาการป้องกันประเทศ ถนนวิภาวดีรังสิต
+        แขวงรัชดาภิเษก เขตดินแดง กทม. ๑๐๔๐๐ โทร.๐๖๕-๖๒๘-๕๐๕๗
+      </p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.978326126989!2d100.55665597497062!3d13.78018008661464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c275ab0958f%3A0x563a8c788327754b!2z4Liq4LiW4Liy4Lia4Lix4LiZ4Lin4Li04LiK4Liy4LiB4Liy4Lij4Lib4LmJ4Lit4LiH4LiB4Lix4LiZ4Lib4Lij4Liw4LmA4LiX4Lio!5e0!3m2!1sth!2sth!4v1714632088970!5m2!1sth!2sth"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <hr class="mx-auto" style="width:60%;">
+  <div id="footer"></div>
+
+
+  <script>
+    const translations = {
+      pageTitle: { th: 'สำนักการศึกษาทหาร', en: 'Office of Military Education (OME)' },
+
+      coursesHead: { th: 'หลักสูตรที่รับผิดชอบ', en: 'Courses' },
+      course1: { th: 'หลักสูตรการปฏิบัติการร่วม', en: 'Joint Operations Course' },
+      course2: { th: 'หลักสูตรนายทหาร<br>สัญญาบัตรใหม่ของ บก.ทท.', en: 'New Officer Course' },
+      course3: { th: 'หลักสูตรนายทหาร<br>ประทวนใหม่ของ บก.ทท.', en: 'New NCO Course' },
+      course4: { th: 'หลักสูตรนายทหารสัญญาบัตรสายวิทยาการด้านการศึกษา', en: 'Education Science Officer Course' },
+      course5: { th: 'หลักสูตรนายทหารประทวนสายวิทยาการด้านการศึกษา', en: 'Education Science NCO Course' },
+
+      newsHead: { th: 'ข่าวประชาสัมพันธ์', en: 'Announcements' },
+      photoHead: { th: 'กิจกรรม สศท.สปท.', en: 'Activities' },
+      contactHead: { th: 'ติดต่อ สศท.สปท.', en: 'Contact OME ' },
+      addressText: {
+        th: `ที่อยู่ : เลขที่ ๖๒ ชั้น ๓ อาคารอเนกประสงค์ สถาบันวิชาการป้องกันประเทศ ถนนวิภาวดีรังสิต
+        แขวงรัชดาภิเษก เขตดินแดง กทม. ๑๐๔๐๐ โทร.๐๖๕-๖๒๘-๕๐๕๗`,
+        en: `Address: 62, Multipurpose Bldg.(3rd Floor), National Defence Studies Institute,
+        Vibhavadi-Rangsit Rd., Ratchadaphisek, Din Daeng, Bangkok 10400 Tel. +66-65-628-5057`
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[key] && translations[key][lang]) el.innerHTML = translations[key][lang];
+      });
+      document.title = translations.pageTitle[lang];
+      localStorage.setItem('lang', lang);
+      document.getElementById('lang-th').classList.toggle('active', lang === 'th');
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    }
+
+    document.getElementById('lang-th').addEventListener('click', () => setLanguage('th'));
+    document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setLanguage(localStorage.getItem('lang') || 'th');
+    });
+  </script>
+
+  <script src="./JS/script-load-head-foot.js"></script>
+  <script src="./JS/script-announcements.js"></script>
+  <script src="./JS/script-news.js"></script>
+  <script src="./JS/script-chatbot.js"></script>
+
+
+</body>
+
+</html>

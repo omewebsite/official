@@ -1,0 +1,38 @@
+.announcement {
+  background-color: #fbf6eb;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.announcement h2 {
+  margin-bottom: 10px;
+}
+
+
+
+.announcement li {
+  margin-bottom: 10px;
+}
+
+.announcement li a {
+  text-decoration: none;
+  color: #000; /* Default text color set to black */
+  position: relative;
+}
+
+.announcement li a:hover {
+  color: #007bff;
+}
+
+.highlight {
+  animation: highlight 1s infinite alternate; /* Animation for highlight effect */
+}
+
+@keyframes highlight {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #fdd01ab0; /* Highlight color */
+  }
+}
