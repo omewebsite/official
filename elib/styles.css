@@ -1,0 +1,174 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+/* General Body Styling */
+body {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF9E5; /* Soft white background with a hint of gold */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header Styling */
+header {
+    background-color: #004d40; /* Deep maroon for a luxurious feel */
+    color: #FFF; /* White text for contrast */
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #FFF; /* White text for contrast */
+}
+
+header .logo {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+}
+
+/* Nav Tabs Styling */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+
+.nav-tabs {
+    background-color: #FFF; /* White background for clean design */
+    border: none;
+    padding: 5px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.nav-tabs .nav-link {
+    color: #A67C00; /* Dark gold text */
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #FFD700; /* Bright gold hover background */
+    color: #333; /* Dark text */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #FFB700; /* Vibrant gold for active tab */
+    color: #000000; /* White text */
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Category Section */
+.category {
+    margin: 40px auto;
+    padding: 20px;
+    background: #FFF; /* White background for cleaner look */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.category h2 {
+    font-size: 1.8rem;
+    color: #A67C00; /* Dark gold text */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 5px;
+}
+
+/* Link Items */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.links.two-cards {
+    justify-content: center;
+}
+
+.link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #333; /* Dark text */
+    width: calc(33.33% - 20px);
+    padding: 15px;
+    background-color: #FFF; /* White background for each card */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.link-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; /* Slightly tinted white for hover effect */
+}
+
+.link-item img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.link-item span {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #A67C00; /* Gold text */
+}
+
+.link-item .description {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .link-item {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .link-item {
+        width: 100%;
+    }
+}
+
+/* Style for the responsive image */
+.responsive-image {
+    width: 100%;
+    max-width: 800px; /* Maximum width for large screens */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px auto; /* Center the image */
+}
+
+/* Media query for smaller screens (phones) */
+@media (max-width: 768px) {
+    .responsive-image {
+        max-width: 350px; /* Set smaller max-width for phones */
+    }
+}

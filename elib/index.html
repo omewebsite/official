@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDSI E-Library</title>
+    <meta name="description" content="NDSI E-Library: Your resource hub for e-books, research documents, and academic journals.">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="text-center py-4 text-white custom-header">
+        <div class="header-content d-flex align-items-center justify-content-center">
+            <img src="images/logo.png" alt="NDSI Logo" class="logo">
+            <h1 class="ms-3">NDSI E-Library</h1>
+        </div>
+        <div class="nav-container">
+            <ul class="nav nav-tabs justify-content-center" id="libraryTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                        Home
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="ebooks-tab" data-bs-toggle="tab" data-bs-target="#ebooks" type="button" role="tab" aria-controls="ebooks" aria-selected="false">
+                        NDSI Ebook
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="scholar-tab" data-bs-toggle="tab" data-bs-target="#scholar" type="button" role="tab" aria-controls="scholar" aria-selected="false">
+                        Network Scholar
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="thaijo-tab" data-bs-toggle="tab" data-bs-target="#thaijo" type="button" role="tab" aria-controls="thaijo" aria-selected="false">
+                        ThaiJo
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="openaccess-tab" data-bs-toggle="tab" data-bs-target="#openaccess" type="button" role="tab" aria-controls="openaccess" aria-selected="false">
+                        Open Access
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="tool-tab" data-bs-toggle="tab" data-bs-target="#tool" type="button" role="tab" aria-controls="tool" aria-selected="false">
+                        Academic Tools
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="net-tab" data-bs-toggle="tab" data-bs-target="#net" type="button" role="tab" aria-controls="net" aria-selected="false">
+                        Network Library
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    
+    <main class="tab-content mt-4">
+        <!-- Home Section -->
+        <section id="home" class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
+            <div class="category text-center">
+                <h2>ห้องสมุด สปท. ยินดีต้อนรับ</h2>
+                <p>แหล่งข้อมูลครบวงจรสำหรับหนังสืออิเล็กทรอนิกส์ เอกสารวิจัย วารสารวิชาการ ของสถาบันวิชาการป้องกันประเทศ และ ฐานข้อมูลอื่นๆทั่วโลก</p>
+                <img src="images/sil.jpg" alt="Welcome Image" class="responsive-image">
+                <!--<img src="welcome.png" alt="Welcome Image" class="img-fluid" style="max-width: 600px; margin: 20px auto;"> -->
+            </div>
+        </section>
+
+        <!-- NDSI Ebook Section -->
+        <section id="ebooks" class="tab-pane fade" role="tabpanel" aria-labelledby="ebooks-tab">
+            <div class="category">
+                <h2>NDSI Ebook</h2>
+                <div class="links two-cards">
+                    <a href="https://auth.bookdosepath.com/NDSI/login" class="link-item">
+                        <img src="images/bookdose.png" alt="BookDosePath Logo" loading="lazy">
+                        <span>Bookdose Path</span>
+                        <div class="description">แหล่งรวมหนังสืออิเล็กทรอนิกส์ สปท.</div>
+                    </a>
+                   
+                    <a href="https://tally.so/r/w74lMZ" class="link-item">
+                        <img src="images/reg.png" alt="BookDose Registration Logo" loading="lazy">
+                        <span>Bookdose Registration</span>
+                        <div class="description">ระบบลงทะเบียนเพื่อเข้าถึงหนังสืออิเล็กทรอนิกส์ สปท.</div>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Network Scholar Section -->
+        <section id="scholar" class="tab-pane fade" role="tabpanel" aria-labelledby="scholar-tab">
+            <div class="category">
+                <h2>Network Scholar</h2>
+                <div class="links two-cards">
+                    <a target="_blank" href="http://103.107.52.9/" class="link-item">
+                        <img src="images/scholar.png" alt="คลังเอกสาร สปท. Logo" loading="lazy">
+                        <span>คลังเอกสารวิจัย สปท.</span>
+                        <div class="description">แหล่งรวมเอกสารวิจัยของ สปท.</div>
+                    </a>
+                    <a target="_blank" href="https://tdc.thailis.or.th/" class="link-item">
+                        <img src="images/thaiLIS.png" alt="Thailis Logo" loading="lazy">
+                        <span>Thailis</span>
+                        <div class="description">แหล่งรวมเอกสารวิจัยของสถาบันการศึกษาในสังกัด อว.</div>
+                    </a>
+                    <a target="_blank" href="https://scholar.utcc.ac.th/home" class="link-item">
+                        <img src="images/UTCC-logo-cir.png" alt="UTCC Scholar" loading="lazy">
+                        <span>UTCC Scholar</span>
+                        <div class="description">แหล่งรวมผลงานวิชาการ มหาวิทยาลัยหอการค้าไทย</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ThaiJo Section -->
+        <section id="thaijo" class="tab-pane fade" role="tabpanel" aria-labelledby="thaijo-tab">
+            <div class="category">
+                <h2>ระบบฐานข้อมูลวารสารอิเล็กทรอนิกส์ของไทย</h2>
+                <div class="links two-cards">
+                    <a target="_blank" href="https://so04.tci-thaijo.org/index.php/ndsijournal" class="link-item">
+                        <img src="images/ndsi.png" alt="วารสาร สปท. Logo" loading="lazy">
+                        <span>วารสาร สปท.</span>
+                        <div class="description">แหล่งรวมบทความวารสาร สปท.</div>
+                    </a>
+                    <a target="_blank" href="https://so05.tci-thaijo.org/index.php/ratthapirak" class="link-item">
+                        <img src="images/ndc.png" alt="วารสาร วปอ. Logo" loading="lazy">
+                        <span>วารสาร วปอ.</span>
+                        <div class="description">แหล่งรวมบทความวารสาร วปอ.</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Access Section -->
+        <section id="openaccess" class="tab-pane fade" role="tabpanel" aria-labelledby="openaccess-tab">
+            <div class="category">
+                <h2>Open Access</h2>
+                <div class="links">
+                    <a target="_blank" href="https://www.dart-europe.org/basic-search.php" class="link-item">
+                        <img src="images/dart.png" alt="DART-Europe Logo" loading="lazy">
+                        <span>DART-Europe</span>
+                        <div class="description">แหล่งรวมวิทยานิพนธ์จากมหาวิทยาลัยต่างๆ ทั่วยุโรป</div>
+                    </a>
+                    <a target="_blank" href="https://doaj.org/" class="link-item">
+                        <img src="images/doaj.png" alt="DOAJ Logo" loading="lazy">
+                        <span>Directory of Open Access Journals</span>
+                        <div class="description">แหล่งรวมวารสารวิชาการที่เข้าถึงได้ฟรีจากทั่วโลก</div>
+                    </a>
+                    <a target="_blank" href="https://www.doabooks.org/" class="link-item">
+                        <img src="images/doab.png" alt="DOAB Logo" loading="lazy">
+                        <span>Directory of Open Access Books</span>
+                        <div class="description">แหล่งรวมหนังสือแบบเปิด</div>
+                    </a>
+                    <a target="_blank" href="https://dspace.mit.edu/handle/1721.1/7582" class="link-item">
+                        <img src="images/mit.jpg" alt="DSpace@MIT Logo" loading="lazy">
+                        <span>DSpace@MIT Theses</span>
+                        <div class="description">แหล่งรวมวิทยานิพนธ์ของนักศึกษา MIT</div>
+                    </a>
+                    <a target="_blank" href="https://eric.ed.gov/" class="link-item">
+                        <img src="images/eric.png" alt="ERIC Logo" loading="lazy">
+                        <span>ERIC</span>
+                        <div class="description">แหล่งรวมข้อมูลสาขาการศึกษาแบบเปิด</div>
+                    </a>
+                    <a target="_blank" href="https://scholar.google.com/" class="link-item">
+                        <img src="images/gscholar.png" alt="Google Scholar Logo" loading="lazy">
+                        <span>Google Scholar</span>
+                        <div class="description">เครื่องมือค้นหาบทความวิจัยทั่วโลก</div>
+                    </a>
+                    <a target="_blank" href="https://about.jstor.org/oa-and-free/" class="link-item">
+                        <img src="images/jstor.png" alt="JSTOR Logo" loading="lazy">
+                        <span>JSTOR</span>
+                        <div class="description">แหล่งรวมข้อมูลวารสารและหนังสืออิเล็กทรอนิกส์แบบเปิด</div>
+                    </a>
+                    <a target="_blank" href="https://www.omicsonline.org/open-access.php" class="link-item">
+                        <img src="images/omic.jpg" alt="Omicsonline Logo" loading="lazy">
+                        <span>Omics</span>
+                        <div class="description">แหล่งรวมวารสารวิชาการ, หนังสือ, และแหล่งทรัพยากร แบบเปิด</div>
+                    </a>
+                    <a target="_blank" href="https://uk.sagepub.com/en-gb/asi/open-access-at-sage" class="link-item">
+                        <img src="images/sage.png" alt="Sage Logo" loading="lazy">
+                        <span>Sage Publishing</span>
+                        <div class="description">แหล่งรวมวารสารและตำราวิชาการแบบเปิด</div>
+                    </a>
+                    <a target="_blank" href="https://www.springer.com/gp/open-access/books" class="link-item">
+                        <img src="images/springer.png" alt="SpringerOpen Logo" loading="lazy">
+                        <span>Springer</span>
+                        <div class="description">แหล่งรวมผลงานวิชาการแบบเปิด</div>
+                    </a>
+                    <a target="_blank" href="https://trove.nla.gov.au/" class="link-item">
+                        <img src="images/trove.png" alt="Trove Logo" loading="lazy">
+                        <span>Trove</span>
+                        <div class="description">แหล่งรวมทรัพยากรจากห้องสมุด, พิพิธภัณฑ์, และแกลเลอรี่ ของออสเตรเลีย</div>
+                    </a>
+                    <a target="_blank" href="https://authorservices.wiley.com/author-resources/Journal-Authors/open-access/index.html" class="link-item">
+                        <img src="images/willey.png" alt="Wiley Logo" loading="lazy">
+                        <span>Wiley</span>
+                        <div class="description">แหล่งรวมวารสารและตำราวิชาการแบบเปิด</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic tools Section -->
+        <section id="tool" class="tab-pane fade" role="tabpanel" aria-labelledby="tool-tab">
+            <div class="category">
+                <h2>Academic Tools</h2>
+                <div class="links two-cards">
+                    <a target="_blank" href="https://app.akarawisut.com/" class="link-item">
+                        <img src="images/akra.png" alt="อักขรา Logo" loading="lazy">
+                        <span>ระบบอักขราวิสุทธิ์</span>
+                        <div class="description">ตรวจสอบการคัดลอกวิทยานิพนธ์ (ใช้เมล์ @rtarf.mi.th)</div>
+                    </a>
+                    <a target="_blank" href="https://www.paperrater.com/plagiarism_checker" class="link-item">
+                        <img src="images/prater.png" alt="Paperrater Logo" loading="lazy">
+                        <span>Paperrater</span>
+                        <div class="description">ตรวจสอบการลอกเลียนวรรณกรรมทางออนไลน์ฟรี</div>
+                    </a>
+                    <a target="_blank" href="https://thaiome.rtarf.mi.th/citation-gen/index.html" class="link-item">
+                        <img src="images/apa-style-logo.png" alt="Paperrater Logo" loading="lazy">
+                        <span>NDSI Citation Generator</span>
+                        <div class="description">ระบบสร้างรูปแบบรายการอ้างอิง APA 7 อัตโนมัติ</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Network Section -->
+        <section id="net" class="tab-pane fade" role="tabpanel" aria-labelledby="net-tab">
+            <div class="category">
+                <h2>Network Library</h2>
+                <div class="links two-cards">
+                    <a target="_blank" href="http://library.rta.mi.th/elib/" class="link-item">
+                        <img src="images/army.png" alt="ทบ. Logo" loading="lazy">
+                        <span>บก.ทบ.</span>
+                        <div class="description">ห้องสมุดของกองทัพบก</div>
+                    </a>
+                    <a target="_blank" href="https://libned.navy.mi.th/" class="link-item">
+                        <img src="images/navy.png" alt="บก.ทร. Logo" loading="lazy">
+                        <span>ทร.</span>
+                        <div class="description">ห้องสมุดของกองทัพเรือ</div>
+                    </a>
+                    <a target="_blank" href="https://library.rtaf.mi.th/index.php/home?lang=th/" class="link-item">
+                        <img src="images/airforce.jpg" alt="ทอ. Logo" loading="lazy">
+                        <span>บก.ทอ.</span>
+                        <div class="description">ห้องสมุดของกองทัพอากาศ</div>
+                    </a>
+                    <a target="_blank" href="https://library.rtaf.mi.th/index.php/home?lang=th/" class="link-item">
+                        <img src="images/dti.png" alt="สทป. Logo" loading="lazy">
+                        <span>สทป.</span>
+                        <div class="description">ห้องสมุดของสถาบันเทคโนโลยีป้องกันประเทศ</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
