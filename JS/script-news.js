@@ -6,7 +6,6 @@ function getDriveImageUrl(url) {
     const idMatch = url.match(/\/d\/([^\/\?#]+)/) || url.match(/[?&]id=([^&]+)/);
     if (idMatch) {
         const photoId = idMatch[1];
-        // เปลี่ยนจาก s4000 เป็น w400 ตามคำขอ
         return `https://drive.google.com/thumbnail?id=${photoId}&sz=w1500`;
     }
     return url;
@@ -39,7 +38,7 @@ function fetchDataAndRender() {
                 if (links.length === 0) return;
 
                 // Determine target link based on index (following previous pattern)
-                const targetLink = `./0news${index + 1}.html`;
+                const targetLink = `www.ome.ac.th`;
 
                 const cardId = `news-card-${index}`;
                 cardDiv.innerHTML = `
