@@ -46,14 +46,14 @@ function convertGDriveToImgUrl(driveUrl, width = "1080") {
 
 /**
  * ตั้งค่ารูป Banner เหนือส่วน "หลักสูตรที่รับผิดชอบ"
- * โดยแปลง Google Drive URL แล้วใส่ใน src ของ img#course-banner
+ * โดยแปลง Google Drive URL แล้วใส่ใน src ของ img#org-banner
  *
  * @param {string} driveUrl - Google Drive share URL ของรูป banner
  */
-function setCourseBanner(driveUrl) {
-  const imgEl = document.getElementById("course-banner");
+function setOrgBanner(driveUrl) {
+  const imgEl = document.getElementById("org-banner");
   if (!imgEl) {
-    console.warn("script-gg-img-convert: ไม่พบ element #course-banner");
+    console.warn("script-gg-img-convert: ไม่พบ element #org-banner");
     return;
   }
 
@@ -61,15 +61,56 @@ function setCourseBanner(driveUrl) {
   if (!imgUrl) return;
 
   imgEl.src = imgUrl;
-  imgEl.alt = "Course Banner";
+  imgEl.alt = "Org Banner";
+}
+
+/**
+ * แสดง popup รูป Banner ตอนเปิดหน้าเว็บ
+ * กด ✕ เพื่อปิดและ destroy popup ออกจาก DOM
+ *
+ * @param {string} driveUrl - Google Drive share URL ของรูป banner
+ */
+function showOrgBannerPopup(driveUrl) {
+  const imgUrl = convertGDriveToImgUrl(driveUrl);
+  if (!imgUrl) return;
+
+  // สร้าง overlay
+  const overlay = document.createElement("div");
+  overlay.id = "org-banner-popup-overlay";
+  overlay.className = "org-banner-overlay";
+
+  // สร้าง container รูป
+  const container = document.createElement("div");
+  container.className = "org-banner-popup-container";
+
+  // ปุ่ม ✕
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "org-banner-close-btn";
+  closeBtn.innerHTML = "&times;";
+  closeBtn.setAttribute("aria-label", "ปิด");
+  closeBtn.addEventListener("click", () => {
+    overlay.remove();
+  });
+
+  // รูปภาพ
+  const img = document.createElement("img");
+  img.src = imgUrl;
+  img.alt = "Org Banner";
+  img.className = "org-banner-popup-img";
+
+  container.appendChild(closeBtn);
+  container.appendChild(img);
+  overlay.appendChild(container);
+  document.body.appendChild(overlay);
 }
 
 /* ───────────────────────────────────────────────
    กำหนด Google Drive URL ของรูป Banner ที่นี่
    แก้เฉพาะค่านี้เมื่อต้องการเปลี่ยนรูป
 ─────────────────────────────────────────────── */
-const COURSE_BANNER_URL = "https://drive.google.com/file/d/11olJFKI9Lwc4hNK5iPEFMwb1CAXcAPDP/view";
+const ORG_BANNER_URL = "https://drive.google.com/file/d/11olJFKI9Lwc4hNK5iPEFMwb1CAXcAPDP/view";
 
 window.addEventListener("DOMContentLoaded", () => {
-  setCourseBanner(COURSE_BANNER_URL);
+  setOrgBanner(ORG_BANNER_URL);
+  showOrgBannerPopup(ORG_BANNER_URL);
 });
