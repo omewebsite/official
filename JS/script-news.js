@@ -1,17 +1,7 @@
 
 
-function getDriveImageUrl(url) {
-    if (!url) return '';
-    // Extract ID from various Google Drive link formats
-    const idMatch = url.match(/\/d\/([^\/\?#]+)/) || url.match(/[?&]id=([^&]+)/);
-    if (idMatch) {
-        const photoId = idMatch[1];
-        return `https://drive.google.com/thumbnail?id=${photoId}&sz=w1500`;
-    }
-    return url;
-}
-
-
+// หมายเหตุ: การแปลง Google Drive URL ใช้ convertGDriveToImgUrl() จาก script-gg-img-convert.js
+// (โหลดไว้ก่อนแล้วใน index.html)
 
 function fetchDataAndRender() {
     const jsonUrl = './ข่าวประชาสัมพันธ์/news.json';
@@ -21,7 +11,6 @@ function fetchDataAndRender() {
         .then(data => {
             const cardContainer = document.getElementById('card-container');
             cardContainer.innerHTML = ''; // Clear existing content
-
 
             data.forEach((entry, index) => {
                 const cardDiv = document.createElement('div');
@@ -37,44 +26,40 @@ function fetchDataAndRender() {
 
                 if (links.length === 0) return;
 
-                // Determine target link based on index (following previous pattern)
-                const targetLink = `www.ome.ac.th`;
-
                 const cardId = `news-card-${index}`;
                 cardDiv.innerHTML = `
                     <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                        <a href="${targetLink}" class="text-decoration-none h-100 d-flex flex-column">
+                        <div class="h-100 d-flex flex-column">
                             <div class="ratio ratio-16x9 overflow-hidden" style="background: #f0f0f0;">
-                                <img id="${cardId}-img" src="${getDriveImageUrl(links[0])}" class="card-img-top" style="object-fit: cover; transition: opacity 0.8s ease-in-out;" alt="${title}">
+                                <img id="${cardId}-img" src="${convertGDriveToImgUrl(links[0])}" class="card-img-top" style="object-fit: cover; transition: opacity 0.8s ease-in-out;" alt="${title}">
                             </div>
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title text-dark mb-0 font-weight-bold" 
+                                <h5 class="card-title text-dark mb-0 font-weight-bold"
                                     style="font-size: 0.95rem; line-height: 1.6; text-align: justify; text-justify: inter-word;">
                                     ${title}
                                 </h5>
                             </div>
-
-                        </a>
+                        </div>
                     </div>
                 `;
 
                 cardContainer.appendChild(cardDiv);
 
                 // Image rotation logic with randomized intervals and slow fade
+                // stayDuration slowed down 1.2x: range 1200–3000ms (was 1000–2500ms)
                 if (links.length > 1) {
                     let currentLinkIndex = 0;
                     const imgElement = document.getElementById(`${cardId}-img`);
 
                     const scheduleNextRotation = () => {
-                        // Random interval between 1000ms and 2000ms (1-2 seconds)
-                        const stayDuration = Math.floor(Math.random() * 1500) + 1000;
+                        const stayDuration = Math.floor(Math.random() * 1800) + 1200;
 
                         setTimeout(() => {
                             imgElement.style.opacity = 0;
                             // Wait for 0.8s fade out
                             setTimeout(() => {
                                 currentLinkIndex = (currentLinkIndex + 1) % links.length;
-                                imgElement.src = getDriveImageUrl(links[currentLinkIndex]);
+                                imgElement.src = convertGDriveToImgUrl(links[currentLinkIndex]);
                                 imgElement.style.opacity = 1;
                                 // After fading in, schedule the next slide
                                 scheduleNextRotation();
@@ -82,8 +67,8 @@ function fetchDataAndRender() {
                         }, stayDuration);
                     };
 
-                    // Initial delay to further desync them if they both start from 0
-                    const initialDelay = Math.random() * 2000;
+                    // Initial delay slowed down 1.2x: 2400ms (was 2000ms)
+                    const initialDelay = Math.random() * 2400;
                     setTimeout(scheduleNextRotation, initialDelay);
                 }
             });
@@ -96,5 +81,4 @@ function fetchDataAndRender() {
 
 // Initial call
 document.addEventListener('DOMContentLoaded', fetchDataAndRender);
-
 

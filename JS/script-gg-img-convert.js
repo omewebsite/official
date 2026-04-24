@@ -9,7 +9,10 @@
  * รองรับรูปแบบ:
  *   - https://drive.google.com/file/d/{id}/view
  *   - https://drive.google.com/file/d/{id}/view?usp=sharing
+ *   - https://drive.google.com/d/{id}/...  (short path)
  *   - https://drive.google.com/open?id={id}
+ *   - https://drive.google.com/thumbnail?id={id}&sz=...
+ *   - https://drive.google.com/uc?id={id}&export=...
  *
  * @param {string} driveUrl - Google Drive URL
  * @returns {string|null} - File ID หรือ null ถ้าสกัดไม่ได้
@@ -17,11 +20,11 @@
 function extractGDriveId(driveUrl) {
   if (!driveUrl) return null;
 
-  // รูปแบบ /file/d/{id}/
-  const matchFile = driveUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
-  if (matchFile) return matchFile[1];
+  // รูปแบบ /d/{id}/ (ครอบคลุมทั้ง /file/d/ และ path อื่นๆ)
+  const matchPath = driveUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if (matchPath) return matchPath[1];
 
-  // รูปแบบ ?id={id} หรือ &id={id}
+  // รูปแบบ ?id={id} หรือ &id={id} (ใช้ใน thumbnail, uc, open)
   const matchParam = driveUrl.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   if (matchParam) return matchParam[1];
 
