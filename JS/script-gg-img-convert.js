@@ -111,7 +111,7 @@ function showOrgBannerPopup(driveUrl) {
    กำหนด Google Drive URL ของรูป Banner ที่นี่
    แก้เฉพาะค่านี้เมื่อต้องการเปลี่ยนรูป
 ─────────────────────────────────────────────── */
-const ORG_BANNER_URL = "https://drive.google.com/file/d/11olJFKI9Lwc4hNK5iPEFMwb1CAXcAPDP/view";
+const ORG_BANNER_URL = "https://drive.google.com/file/d/1Ahz9quj4wbWGZ96g63XELD9zBsw_C04h/view";
 
 window.addEventListener("DOMContentLoaded", () => {
   setOrgBanner(ORG_BANNER_URL);
