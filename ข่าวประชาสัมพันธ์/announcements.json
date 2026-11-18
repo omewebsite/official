@@ -1,8 +1,15 @@
 [
+    {
+    "news-title": "ประกาศ สศท.สปท. เรื่อง รับสมัครบุคคลพลเรือนเพื่อเลือกสรรเป็นพนักงานราชการ",
+    "news-link": "https://drive.google.com/file/d/1rH4_LNcHdh1CTWmPP0n3u6Pgb82Yeja-/view",
+    "highlight": true,
+    "target": "_blank"
+  },
+  
   {
     "news-title": "ประรายชื่อกำลังพลที่ได้รับทุน มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ(มจพ.) และ มหาวิทยาลัยรังสิต (มรส.) ปีการศึกษา 2569",
     "news-link": "https://drive.google.com/file/d/1E8Jj0Lzm7z4WnRPzte_bMSmNGonjyGpE/view",
-    "highlight": true,
+    "highlight": false,
     "target": "_blank"
   },
 
